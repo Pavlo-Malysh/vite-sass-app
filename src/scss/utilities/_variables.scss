@@ -1,2 +1,11 @@
 $color-primary: #656564;
 $color-blue: lightblue;
+
+
+// Interpolation example
+
+$status: (
+    "completed": #a461d8,
+    "active": #82c43c,
+    "ended": #fc5a5a
+);
