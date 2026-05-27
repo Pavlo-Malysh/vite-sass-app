@@ -5,21 +5,83 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/sass.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lesson 7</title>
+  <title>Directive @extend</title>
 </head>
 
 <body class="page">
   <section class="section">
     <h1 class="title">
-      Card
+      Alerts
     </h1>
-    <ul class="tasks-list">
+    <p class="alert-label">Additional</p>
+    <ul class="alert-list">
+      <li class="alert-item">
+        <svg width="16" height="16" class="item-icon">
+          <use href="/sprite.svg#icon-book"></use>
+        </svg>
+        <p class="item-text">Primary</p>
+        <button class="alert-btn" type="button">
+          <svg width="16" height="16" class="close-btn">
+            <use href="/sprite.svg#icon-cancel-circle"></use>
+          </svg>
+        </button>
+      </li>
+      <li class="alert-item">
+        <svg width="16" height="16" class="item-icon">
+          <use href="/sprite.svg#icon-codepen"></use>
+        </svg>
+        <p class="item-text">Success</p>
+        <button class="alert-btn" type="button">
+          <svg width="16" height="16" class="close-btn">
+            <use href="/sprite.svg#icon-cancel-circle"></use>
+          </svg>
+          </svg>
+        </button>
+      </li>
+      <li class="alert-item">
+        <svg width="16" height="16" class="item-icon">
+          <use href="/sprite.svg#icon-sphere"></use>
+        </svg>
+        <p class="item-text">Danger</p>
+        <button class="alert-btn" type="button">
+          <svg width="16" height="16" class="close-btn">
+            <use href="/sprite.svg#icon-cancel-circle"></use>
+          </svg>
+          </svg>
+        </button>
+      </li>
+      <li class="alert-item">
+        <svg width="16" height="16" class="item-icon">
+          <use href="/sprite.svg#icon-warning"></use>
+        </svg>
+        <p class="item-text">Warning</p>
+        <button class="alert-btn" type="button">
+          <svg width="16" height="16" class="close-btn">
+            <use href="/sprite.svg#icon-cancel-circle"></use>
+          </svg>
+          </svg>
+        </button>
+      </li>
+      <li class="alert-item">
+        <svg width="16" height="16" class="item-icon">
+          <use href="/sprite.svg#icon-pushpin"></use>
+        </svg>
+        <p class="item-text">Info</p>
+        <button class="alert-btn" type="button">
+          <svg width="16" height="16" class="close-btn">
+            <use href="/sprite.svg#icon-cancel-circle"></use>
+          </svg>
+          </svg>
+        </button>
+      </li>
+    </ul>
+    <!-- <ul class="tasks-list">
       <li class="task">
         <div class="task-info">
           <h3 class="task-title">Send benefit review by Sunday</h3>
           <p class="task-info-text">Due date: <span>December 23, 2023</span></p>
           <div class="task-user-box">
-            <img src="/public/user1.png" alt="user" width="24" height="24" class="task-user-icon">
+            <img src="/user1.png" alt="user" width="24" height="24" class="task-user-icon">
             <p class="task-user-name">George Fields</p>
           </div>
         </div>
@@ -35,7 +97,7 @@
           <h3 class="task-title">Send benefit review by Sunday</h3>
           <p class="task-info-text">Due date: <span>December 23, 2023</span></p>
           <div class="task-user-box">
-            <img src="/public/user2.png" alt="user" width="24" height="24" class="task-user-icon">
+            <img src="/user2.png" alt="user" width="24" height="24" class="task-user-icon">
             <p class="task-user-name">George Fields</p>
           </div>
         </div>
@@ -51,7 +113,7 @@
           <h3 class="task-title">Send benefit review by Tuesday</h3>
           <p class="task-info-text">Due date: <span>December 23, 2023</span></p>
           <div class="task-user-box">
-            <img src="/public/user1.png" alt="user" width="24" height="24" class="task-user-icon">
+            <img src="/user1.png" alt="user" width="24" height="24" class="task-user-icon">
             <p class="task-user-name">George Fields</p>
           </div>
         </div>
@@ -62,7 +124,7 @@
           </div>
         </div>
       </li>
-    </ul>
+    </ul> -->
 
   </section>
 

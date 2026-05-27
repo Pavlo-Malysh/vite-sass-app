@@ -1,0 +1,44 @@
+.alert-label {
+    margin-bottom: 15px;
+}
+
+.alert-list {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.alert-item {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+    width: 459px;
+    border-radius: 6px;
+
+    background-color: #747171;
+}
+
+.item-icon {
+    fill: #ffff;
+}
+
+.alert-btn {
+    background-color: transparent;
+    border: none;
+}
+
+.item-text {}
+
+.close-btn {
+    position: absolute;
+    top: 25px;
+    right: 18px;
+    fill: #ffff;
+    width: 16px;
+    height: 16px;
+}
