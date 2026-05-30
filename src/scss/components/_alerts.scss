@@ -1,3 +1,11 @@
+$primary: #f07f2e;
+$success: #82c43c;
+$danger: #e7640c;
+$warning: #fbff02;
+$info: #1302ff;
+
+
+
 .alert-label {
     margin-bottom: 15px;
 }
@@ -10,7 +18,110 @@
     gap: 18px;
 }
 
-.alert-item {
+.item-icon {
+    fill: #ffff;
+}
+
+.alert-btn {
+    background-color: transparent;
+    border: none;
+}
+
+
+.close-btn {
+    position: absolute;
+    top: 25px;
+    right: 18px;
+    fill: #ffff;
+    width: 16px;
+    height: 16px;
+}
+
+// //Approach 1
+
+// .alert-item {
+//     position: relative;
+//     padding: 20px;
+//     display: flex;
+//     align-items: center;
+
+//     gap: 8px;
+//     width: 459px;
+//     border-radius: 6px;
+
+//     background-color: #747171;
+// }
+
+// .alert-item-primary {
+//     background-color: #f07f2e;
+// }
+
+// .alert-item-success {
+//     background-color: #82c43c;
+// }
+
+// .alert-item-danger {
+//     background-color: #e7640c;
+// }
+
+// .alert-item-warning {
+//     background-color: #e8eb4094;
+// }
+
+// .alert-item-info {
+//     background-color: #1302ff;
+// }
+
+
+// //Approach 2
+
+// .alert-item {
+//     position: relative;
+//     padding: 20px;
+//     display: flex;
+//     align-items: center;
+
+//     gap: 8px;
+//     width: 459px;
+//     border-radius: 6px;
+
+//     background-color: #747171;
+// }
+
+// .alert-item-primary {
+//     @extend .alert-item;
+
+//     background-color: #f07f2e;
+// }
+
+// .alert-item-success {
+//     @extend .alert-item;
+
+//     background-color: #82c43c;
+// }
+
+// .alert-item-danger {
+//     @extend .alert-item;
+
+//     background-color: #e7640c;
+// }
+
+// .alert-item-warning {
+//     @extend .alert-item;
+
+//     background-color: #e8eb4094;
+// }
+
+// .alert-item-info {
+//     @extend .alert-item;
+
+//     background-color: #1302ff;
+// }
+
+
+//Approach 3
+
+%alert-item {
     position: relative;
     padding: 20px;
     display: flex;
@@ -23,22 +134,32 @@
     background-color: #747171;
 }
 
-.item-icon {
-    fill: #ffff;
+.alert-item-primary {
+    @extend %alert-item;
+
+    background-color: #f07f2e;
 }
 
-.alert-btn {
-    background-color: transparent;
-    border: none;
+.alert-item-success {
+    @extend %alert-item;
+
+    background-color: #82c43c;
 }
 
-.item-text {}
+.alert-item-danger {
+    @extend %alert-item;
 
-.close-btn {
-    position: absolute;
-    top: 25px;
-    right: 18px;
-    fill: #ffff;
-    width: 16px;
-    height: 16px;
+    background-color: #e7640c;
+}
+
+.alert-item-warning {
+    @extend %alert-item;
+
+    background-color: #e8eb4094;
+}
+
+.alert-item-info {
+    @extend %alert-item;
+
+    background-color: #1302ff;
 }
