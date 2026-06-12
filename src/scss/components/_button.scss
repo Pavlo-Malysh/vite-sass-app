@@ -1,0 +1,14 @@
+@use "sass:math";
+
+@use "../utilities/btn-scema" as vars with ($font-size: 32px,
+    $btn-color: black,
+    $btn-bgcolor: red);
+
+.small-btn {
+    font-size: vars.$font-size;
+    color: vars.$btn-color;
+    background-color: vars.$btn-bgcolor;
+    cursor: pointer;
+}
+
+@debug math.$pi;

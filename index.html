@@ -5,16 +5,136 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/sass.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SASS Tutorial template</title>
+  <title>Directive @mixin</title>
 </head>
 
 <body class="page">
-  <h1 class="page-title">Badges</h1>
-  <div class="wrapper">
-    <span class="badge badge-completed">Completed</span>
-    <span class="badge badge-ended">Ended</span>
-    <span class="badge badge-active">Active</span>
-  </div>
+  <section class="section">
+    <h1 class="title">
+      Directive @Mixin
+    </h1>
+    <p class="alert-label" style="margin-bottom: 20px;">Additional</p>
+    <button type="button" class="btn-sm">Small</button>
+
+    <button type="button" class="btn-md">Regular</button>
+
+    <button type="button" class="btn-lg">Large</button>
+    <button type="button" class="btn-xlg">X-Large</button>
+
+    <ul class="alert-list">
+      <li class="alert-item alert-item-primary">
+        <svg width="16" height="16" class="item-icon">
+          <use href="/sprite.svg#icon-book"></use>
+        </svg>
+        <p class="item-text">Primary</p>
+        <button class="alert-btn" type="button">
+          <svg width="16" height="16" class="close-btn">
+            <use href="/sprite.svg#icon-cancel-circle"></use>
+          </svg>
+        </button>
+      </li>
+      <li class="alert-item alert-item-success">
+        <svg width="16" height="16" class="item-icon">
+          <use href="/sprite.svg#icon-codepen"></use>
+        </svg>
+        <p class="item-text">Success</p>
+        <button class="alert-btn" type="button">
+          <svg width="16" height="16" class="close-btn">
+            <use href="/sprite.svg#icon-cancel-circle"></use>
+          </svg>
+          </svg>
+        </button>
+      </li>
+      <li class="alert-item alert-item-danger">
+        <svg width="16" height="16" class="item-icon">
+          <use href="/sprite.svg#icon-sphere"></use>
+        </svg>
+        <p class="item-text">Danger</p>
+        <button class="alert-btn" type="button">
+          <svg width="16" height="16" class="close-btn">
+            <use href="/sprite.svg#icon-cancel-circle"></use>
+          </svg>
+          </svg>
+        </button>
+      </li>
+      <li class="alert-item alert-item-warning">
+        <svg width="16" height="16" class="item-icon">
+          <use href="/sprite.svg#icon-warning"></use>
+        </svg>
+        <p class="item-text">Warning</p>
+        <button class="alert-btn" type="button">
+          <svg width="16" height="16" class="close-btn">
+            <use href="/sprite.svg#icon-cancel-circle"></use>
+          </svg>
+          </svg>
+        </button>
+      </li>
+      <li class="alert-item alert-item-info ">
+        <svg width="16" height="16" class="item-icon">
+          <use href="/sprite.svg#icon-pushpin"></use>
+        </svg>
+        <p class="item-text">Info</p>
+        <button class="alert-btn" type="button">
+          <svg width="16" height="16" class="close-btn">
+            <use href="/sprite.svg#icon-cancel-circle"></use>
+          </svg>
+          </svg>
+        </button>
+      </li>
+    </ul>
+    <ul class="tasks-list">
+      <li class="task">
+        <div class="task-info">
+          <h3 class="task-title">Send benefit review by Sunday</h3>
+          <p class="task-info-text">Due date: <span>December 23, 2023</span></p>
+          <div class="task-user-box">
+            <img src="/user1.png" alt="user" width="24" height="24" class="task-user-icon">
+            <p class="task-user-name">George Fields</p>
+          </div>
+        </div>
+        <div class="task-badges">
+          <p class="badges-text">Reminder</p>
+          <div class="badges-status badge-completed">
+            <p>Completed</p>
+          </div>
+        </div>
+      </li>
+      <li class="task">
+        <div class="task-info">
+          <h3 class="task-title">Send benefit review by Sunday</h3>
+          <p class="task-info-text">Due date: <span>December 23, 2023</span></p>
+          <div class="task-user-box">
+            <img src="/user2.png" alt="user" width="24" height="24" class="task-user-icon">
+            <p class="task-user-name">George Fields</p>
+          </div>
+        </div>
+        <div class="task-badges">
+          <p class="badges-text">Call</p>
+          <div class="badges-status badge-ended">
+            <p>Ended</p>
+          </div>
+        </div>
+      </li>
+      <li class="task">
+        <div class="task-info">
+          <h3 class="task-title">Send benefit review by Tuesday</h3>
+          <p class="task-info-text">Due date: <span>December 23, 2023</span></p>
+          <div class="task-user-box">
+            <img src="/user1.png" alt="user" width="24" height="24" class="task-user-icon">
+            <p class="task-user-name">George Fields</p>
+          </div>
+        </div>
+        <div class="task-badges">
+          <p class="badges-text">Reminder</p>
+          <div class="badges-status badge-active">
+            <p>Active</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+  </section>
+
 
   <script type="module" src="./src/js/main.js"></script>
 </body>

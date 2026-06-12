@@ -1,0 +1,121 @@
+@use "../utilities/variables";
+
+.title {
+    align-items: center;
+    color: white;
+}
+
+.tasks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 12px;
+    padding: 24px;
+    width: 589px;
+
+    background-color: #1c1c24;
+
+    .task-info {}
+
+    .task-title {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+
+        line-height: 1.5;
+        letter-spacing: 0.03em;
+        color: #fff;
+        margin-bottom: 8px;
+    }
+
+    .task-info-text {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.42857;
+        letter-spacing: 0.04em;
+        color: #fff;
+        margin-bottom: 20px;
+
+        span {
+            color: #b5b5be;
+        }
+    }
+
+    .task-user-box {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .task-user-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .task-user-name {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.42857;
+        letter-spacing: 0.04em;
+        color: #b5b5be;
+    }
+
+    .badges-text {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.42857;
+        letter-spacing: 0.04em;
+        text-align: right;
+        color: #b5b5be;
+    }
+
+    .task-badges {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+
+    .badges-status {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 20px;
+        padding: 4px 8px;
+        width: 96px;
+        height: 28px;
+        background-color: #b5b5be;
+        cursor: pointer;
+
+        @each $name, $color in variables.$status {
+
+            &.badge-#{$name} {
+                background-color: $color;
+            }
+        }
+
+        &:hover,
+        &:focus {
+            background-color: #d5e218;
+        }
+
+        p {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.42857;
+            letter-spacing: 0.01em;
+            text-align: center;
+            color: #fff;
+        }
+    }
+}
