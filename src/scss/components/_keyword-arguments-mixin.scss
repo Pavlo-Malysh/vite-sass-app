@@ -1,0 +1,126 @@
+@use "sass:meta";
+
+
+// Опційні Іменовані аргументи
+@mixin position ($layer-index, //Обовязковий параметр
+
+    $display, //Обовязковий параметр
+
+    $position-type: absolute,
+    $position-x: 50%,
+    $position-y: $position-x,
+    $offset-x: $position-x,
+    $offset-y: $position-x) {
+
+    position: $position-type;
+    top: $position-y;
+    left: $position-x;
+    transform: translate(($offset-x * -1), ($offset-y * -1));
+    z-index: $layer-index;
+}
+
+
+//Міксини з опційними аргументами
+/* Під час виклику ми можемо за іменем аргумента звернутись до конкретного аргумента і встановити значення. Не залежно в якій послідовності було оголошено міксин. Ми встановлюємо тільки те що потрібно (в опційносу аргументі) */
+
+.alert-item {
+    @include position(100, $offset-y: 70%, $display: block);
+}
+
+
+// ------------------------------------------
+
+%btn {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.42857;
+    letter-spacing: 0.04em;
+    text-align: right;
+    color: #fff;
+    background-color: #f07f2e;
+    border: none;
+    cursor: pointer;
+    transition: 300ms;
+
+    &:hover,
+    &:focus {
+        background-color: #f15c27;
+        box-shadow: 0px 4px 10px 0px rgb(240, 127, 46, 0.25);
+    }
+}
+
+;
+
+
+
+
+
+
+
+//Буде приймати набір класів і генерувати 
+@mixin btn-size($args...) {
+    @for $i from 1 through length($args) {
+        #{nth($args, $i)} {
+            $factor: (
+                $i * 4 - 4
+            );
+        @extend %btn;
+
+        padding: (4px + $factor) (8px + $factor);
+        border-radius: (8px + $factor);
+    }
+}
+}
+
+// Тут аргументи як список, довільна кількість
+@include btn-size(".btn-sm", ".btn-md", ".btn-lg", ".btn-xl");
+
+
+// ---------------------------------------------
+// Приклад іменованих аргументів
+
+
+@mixin btn-type ($types...) {
+    // $types: (
+    //    $success: lightgreen,
+    //    $error: tomato,
+    //    $info: lightblue
+    //     );
+
+
+    // Тут ми забираєм окремо ключ - значення 
+    @each $name, $color in meta.keywords($types) {
+        .btn-#{$name} {
+            border: 2px solid $color;
+            color: $color;
+        }
+    }
+}
+
+;
+
+@include btn-type($success: lightgreen, $error: tomato, $info: lightblue);
+
+
+// ---------------------------------------------------
+
+//Directive @content
+
+@mixin hover($state) {
+    &:not(#{$state}):hover {
+        @content;
+    }
+}
+
+;
+
+.button {
+    background: #000;
+    color: white;
+
+    @include hover($state: disabled) {
+        border: 2px solid tomato;
+        background-color: #f07f2e;
+    }
+}

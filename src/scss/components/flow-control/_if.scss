@@ -1,0 +1,46 @@
+@use "sass:math";
+// Flow control directive @if
+
+@mixin fonts($fs, $fw: null, $lh: null, $ls: null, $align: null) {
+    font-size: $fs;
+
+    @if $fw {
+        font-weight: $fw;
+    }
+
+    @if $lh {
+        @if $lh =="normal" {
+            line-height: normal;
+        }
+
+        @else if math.unit($lh)=="px" {
+            line-height: calc($lh / $fs);
+        }
+
+        @else {
+            @error "$lh value #{$lh} is incorrect";
+        }
+
+    }
+
+    @if $ls {
+        @if $ls =="normal" {
+            letter-spacing: normal;
+        }
+
+        @else {
+            letter-spacing: #{calc($ls / $fs)}em;
+        }
+    }
+
+    @if $align {
+        text-align: $align;
+    }
+}
+
+
+.tiile {
+    // With keyword args
+
+    @include fonts(20px, $fw: 600, $lh: 28px, $ls: 0.5px, $align: center);
+}

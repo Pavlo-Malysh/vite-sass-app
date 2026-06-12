@@ -1,0 +1,30 @@
+@use "../utilities/mixin";
+
+.alert-list {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+// .alert-item {
+//     @include mixin.size(450px, 50px);
+
+//     background-color: #a03333;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     padding: 20px;
+// }
+
+//Міксини без аргументів
+// .alert-item {
+//     @include mixin.position-center();
+// }
+
+
+
+//Міксини з опційними аргументами
+
+// .alert-item {
+//     @include mixin.position(100);
+// }
