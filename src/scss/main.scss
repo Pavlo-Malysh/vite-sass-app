@@ -6,10 +6,11 @@
 // @use "./components/ampersand";
 
 // @use "./utilities/scopes";
-// @use "./components/tasks-card";
-// @use "./components/alerts";
+@use "./components/tasks-card";
+@use "./components/alerts";
 // @use "./components/alerts-mixin";
 @use "./components/keyword-arguments-mixin";
+@use "./components/keyword-mixin";
 @use "./components/flow-control/if";
 @use "./components/flow-control/each";
 @use "./components/flow-control/for";
