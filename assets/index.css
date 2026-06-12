@@ -1,132 +1,399 @@
 @charset "UTF-8";
-/***
-    The new CSS reset - version 1.11 (last updated 20.9.2023)
-    GitHub page: https://github.com/elad2412/the-new-css-reset
-***/
-/*
-    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
-    - The "symbol *" part is to solve Firefox SVG sprite bug
-    - The "html" element is excluded, otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
- */
-*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
-  all: unset;
-  display: revert;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 }
 
-/* Preferred box-sizing value */
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+p:last-child {
+  margin-bottom: 0;
 }
 
-/* Fix mobile Safari increase font-size on landscape mode */
-html {
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  -ms-text-size-adjust: none;
-      text-size-adjust: none;
-}
-
-/* Reapply the pointer cursor for anchor tags */
-a,
-button {
-  cursor: revert;
-}
-
-/* Remove list styles (bullets/numbers) */
-ol,
-ul,
-menu {
+ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
-/* For images to not be able to exceed their container */
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
 img {
-  max-inline-size: 100%;
-  max-block-size: 100%;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
-/* removes spacing between cells in tables */
-table {
-  border-collapse: collapse;
+.title {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+          align-items: center;
+  color: white;
 }
 
-/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
-input,
-textarea {
-  -webkit-user-select: auto;
+.tasks-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+          flex-direction: column;
+  gap: 20px;
 }
 
-/* revert the 'white-space' property for textarea elements on Safari */
-textarea {
-  white-space: revert;
+.task {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+          justify-content: space-between;
+  border-radius: 12px;
+  padding: 24px;
+  width: 589px;
+  background-color: #1c1c24;
+}
+.task .task-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.task .task-info-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.42857;
+  letter-spacing: 0.04em;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.task .task-info-text span {
+  color: #b5b5be;
+}
+.task .task-user-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+          align-items: center;
+  gap: 8px;
+}
+.task .task-user-icon {
+  width: 24px;
+  height: 24px;
+}
+.task .task-user-name {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.42857;
+  letter-spacing: 0.04em;
+  color: #b5b5be;
+}
+.task .badges-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.42857;
+  letter-spacing: 0.04em;
+  text-align: right;
+  color: #b5b5be;
+}
+.task .task-badges {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+          justify-content: space-between;
+}
+.task .badges-status {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+          justify-content: center;
+  border-radius: 20px;
+  padding: 4px 8px;
+  width: 96px;
+  height: 28px;
+  background-color: #b5b5be;
+  cursor: pointer;
+}
+.task .badges-status.badge-completed {
+  background-color: #a461d8;
+}
+.task .badges-status.badge-active {
+  background-color: #82c43c;
+}
+.task .badges-status.badge-ended {
+  background-color: #fc5a5a;
+}
+.task .badges-status:hover, .task .badges-status:focus {
+  background-color: #d5e218;
+}
+.task .badges-status p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.42857;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #fff;
 }
 
-/* minimum style to allow to style meter element */
-meter {
-  -webkit-appearance: revert;
-  -moz-appearance: revert;
-       appearance: revert;
+.alert-label {
+  margin-bottom: 15px;
 }
 
-/* preformatted text - use only for this feature */
-:where(pre) {
-  all: revert;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+.alert-list {
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+          flex-direction: column;
+  gap: 18px;
 }
 
-/* reset default text opacity of input placeholder */
-::-webkit-input-placeholder {
-  color: unset;
-}
-::-moz-placeholder {
-  color: unset;
-}
-:-ms-input-placeholder {
-  color: unset;
-}
-::-ms-input-placeholder {
-  color: unset;
-}
-::placeholder {
-  color: unset;
+.item-icon {
+  fill: white;
 }
 
-/* remove default dot (•) sign */
-::marker {
-  content: initial;
+.alert-btn {
+  background-color: transparent;
+  border: none;
 }
 
-/* fix the feature of 'hidden' attribute.
-   display:revert; revert to element instead of attribute */
-:where([hidden]) {
-  display: none;
+.close-btn {
+  position: absolute;
+  top: 25px;
+  right: 18px;
+  fill: white;
+  width: 16px;
+  height: 16px;
 }
 
-/* revert for bug in Chromium browsers
-   - fix for the content editable attribute will work properly.
-   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
-:where([contenteditable]:not([contenteditable=false])) {
-  -moz-user-modify: read-write;
-  -webkit-user-modify: read-write;
-  overflow-wrap: break-word;
-  -webkit-line-break: after-white-space;
-  -webkit-user-select: auto;
+.alert-item-info, .alert-item-warning, .alert-item-danger, .alert-item-success, .alert-item-primary {
+  position: relative;
+  padding: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+          align-items: center;
+  gap: 8px;
+  width: 459px;
+  border-radius: 6px;
+  background-color: #747171;
 }
 
-/* apply back the draggable feature - exist only in Chromium and Safari */
-:where([draggable=true]) {
-  -webkit-user-drag: element;
+.alert-item-primary {
+  background-color: #f07f2e;
 }
 
-/* Revert Modal native behavior */
-:where(dialog:modal) {
-  all: revert;
+.alert-item-success {
+  background-color: #82c43c;
+}
+
+.alert-item-danger {
+  background-color: #e7640c;
+}
+
+.alert-item-warning {
+  background-color: rgba(232, 235, 64, 0.5803921569);
+}
+
+.alert-item-info {
+  background-color: #1302ff;
+}
+
+/* Під час виклику ми можемо за іменем аргумента звернутись до конкретного аргумента і встановити значення. Не залежно в якій послідовності було оголошено міксин. Ми встановлюємо тільки те що потрібно (в опційносу аргументі) */
+.btn-xlg, .btn-lg, .btn-md, .btn-sm {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.42857;
+  letter-spacing: 0.04em;
+  text-align: right;
+  color: #fff;
+  background-color: #f07f2e;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+  transition: 300ms;
+  margin-bottom: 25px;
+}
+.btn-xlg:hover, .btn-lg:hover, .btn-md:hover, .btn-sm:hover, .btn-xlg:focus, .btn-lg:focus, .btn-md:focus, .btn-sm:focus {
+  background-color: #f15c27;
+  -webkit-box-shadow: 0px 4px 10px 0px rgba(240, 127, 46, 0.25);
+          box-shadow: 0px 4px 10px 0px rgba(240, 127, 46, 0.25);
+}
+
+.btn-sm {
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+.btn-md {
+  padding: 8px 12px;
+  border-radius: 12px;
+}
+
+.btn-lg {
+  padding: 12px 16px;
+  border-radius: 16px;
+}
+
+.btn-xlg {
+  padding: 16px 20px;
+  border-radius: 20px;
+}
+
+.btn-success {
+  border: 2px solid lightgreen;
+  color: lightgreen;
+}
+
+.btn-error {
+  border: 2px solid tomato;
+  color: tomato;
+}
+
+.btn-info {
+  border: 2px solid lightblue;
+  color: lightblue;
+}
+
+.button {
+  background: #000;
+  color: white;
+}
+.button:not(disabled):hover {
+  border: 2px solid tomato;
+  background-color: #f07f2e;
+}
+
+.tiile {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.025em;
+  text-align: center;
+}
+
+.p-8 {
+  padding: 8px;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.p-16 {
+  padding: 16px;
+}
+
+.p-15 {
+  padding: 15px;
+}
+
+.p-53 {
+  padding: 53px;
+}
+
+.margin-sm {
+  margin: 24px;
+}
+
+.margin-md {
+  margin: 32px;
+}
+
+.margin-lg {
+  margin: 36px;
+}
+
+.margin-xl {
+  margin: 68px;
+}
+
+.fw-400 {
+  font-weight: 400px;
+}
+
+.fw-500 {
+  font-weight: 500px;
+}
+
+.fw-600 {
+  font-weight: 600px;
+}
+
+.fw-700 {
+  font-weight: 700px;
+}
+
+/* == END == */
+:root {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #fff;
+}
+
+*,
+*::after,
+*::before {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
@@ -155,26 +422,4 @@ meter {
   min-height: 100vh;
   font-family: sans-serif;
   background-color: #292932;
-}
-
-.page-title {
-  font-size: 96px;
-  font-weight: 600;
-  color: #fafafb;
-}
-
-.badge {
-  display: inline-block;
-  min-width: 96px;
-  padding: 4px 8px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 20px;
-  letter-spacing: 0.07px;
-  text-align: center;
-  border-radius: 20px;
-}
-
-.badge-active {
-  background-color: #82c43c;
 }
