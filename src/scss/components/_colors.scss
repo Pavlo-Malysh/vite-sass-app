@@ -1,0 +1,24 @@
+@use "sass:map";
+
+/* Обєднані значення (мапа) */
+
+$colors: (
+    "primary":#8e3329,
+    "accent":#1a9616,
+    "secondary":#5a1321,
+    "foreground":#191919,
+    "background":#e9e9e9,
+);
+
+
+
+
+// Отримуємо значення з мапи
+body {
+    background-color: map.get($colors, "background"
+        );
+}
+
+@function get-colors($key) {
+    @return map.get($colors, $key);
+}

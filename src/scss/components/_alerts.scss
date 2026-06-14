@@ -163,3 +163,21 @@ $info: #1302ff;
 
     background-color: #1302ff;
 }
+
+
+/*  use with @each */
+$types: (
+    "primary": #F07F2E,
+    "success": #82C43C,
+    "danger": #FC5A5A,
+    "warning": #A461D8,
+    "info": #4E75FF,
+);
+
+@each $key, $value in $types {
+    .alert-#{$key} {
+        background-color: $value;
+    }
+}
+
+;
