@@ -1,5 +1,5 @@
 @use "./utilities/variables";
-@use "./base/reset";
+@use "./utilities/reset";
 
 // @use "./components/button";
 // @use "./components/nesting";
@@ -15,6 +15,12 @@
 @use "./components/flow-control/each";
 @use "./components/flow-control/for";
 @use "./components/flow-control/while";
+@use "./components/function";
+@use './components/type-list';
+@use "./components/colors";
+@use "./components/btn";
+@use "./utilities/mixins";
+@use "./components/block";
 
 
 /* == END == */

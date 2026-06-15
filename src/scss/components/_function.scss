@@ -1,0 +1,74 @@
+@use "sass:math";
+@use "../utilities/decimal" as *;
+
+@function strip-unit ($value) {
+
+    @if type-of($value) !=number {
+        @error "#{$value} is not a number";
+    }
+
+    @if type-of($value)==number and not unitless($value) {
+        @return math.div($value, ($value * 0 + 1));
+    }
+
+    @return $value;
+}
+
+
+@function rem ($px-value, $base-font-size: 16px) {
+    @return calc(strip-unit($px-value) / strip-unit($base-font-size))rem;
+}
+
+@function em ($px-value, $base-font-size: 16px) {
+    @return calc(strip-unit($px-value) / strip-unit($base-font-size))rem;
+}
+
+
+
+$font-size: 25px;
+$value: strip-unit($font-size);
+// @debug $value;
+
+
+
+@mixin fonts ($fs, $fw: null, $lh: null, $ls: null, $align: null) {
+    @if $fs {
+        font-size: $fs;
+    }
+
+    @if $fw {
+        font-weight: $fw;
+    }
+
+    @if $lh {
+        @if $lh ==normal {
+            line-height: normal;
+        }
+
+        @else {
+            $lh: calc(strip-unit($lh) / strip-unit($fs));
+            line-height: decimal-round($lh, 2);
+        }
+    }
+
+    @if $ls {
+        @if $ls ==normal {
+            letter-spacing: normal;
+        }
+
+        @else {
+            $ls: calc(strip-unit($ls) / strip-unit($fs));
+            letter-spacing: #{decimal-round($ls, 2)}em;
+        }
+    }
+
+    @if $align {
+        text-align: $align
+    }
+
+    ;
+}
+
+.container {
+    width: rem(1000px);
+}

@@ -1,0 +1,6 @@
+@use "./colors" as c;
+
+.button {
+    color: c.get-colors("primary");
+    background-color: c.get-colors("background");
+}
