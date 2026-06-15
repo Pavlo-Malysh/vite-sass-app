@@ -1,5 +1,5 @@
 @use "./utilities/variables";
-@use "./base/reset";
+@use "./utilities/reset";
 
 // @use "./components/button";
 // @use "./components/nesting";
@@ -19,6 +19,8 @@
 @use './components/type-list';
 @use "./components/colors";
 @use "./components/btn";
+@use "./utilities/mixins";
+@use "./components/block";
 
 
 /* == END == */
